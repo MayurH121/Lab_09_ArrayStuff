@@ -2,7 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
         int[] dataPoints = new int[100];
 
@@ -38,5 +39,15 @@ public class Main {
         // Task 5
         int userValue = SafeInput.getRangedInt(scanner, "Enter an integer between 1 and 100", 1, 100);
 
+        // Task 6
+        int count = 0;
+        for (int i = 0; i < dataPoints.length; i++)
+        {
+            if (dataPoints[i] == userValue)
+            {
+                count++;
+            }
+        }
+        System.out.println("The value " + userValue + " was found " + count + " times.");
     }
 }
