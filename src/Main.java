@@ -62,10 +62,38 @@ public class Main {
         }
         if (position != -1)
         {
-            System.out.println("The value " + userValue + " was found at array index " + position);
+            System.out.println("The value " + userValue + " was found at array index " + (position + 1));
         } else
         {
             System.out.println("The value " + userValue + " was not found in the array.");
         }
+
+        // Task 8
+        int min = dataPoints[0];
+        int max = dataPoints[0];
+        for (int i = 0; i < dataPoints.length; i++) {
+            if (dataPoints[i] < min)
+            {
+                min = dataPoints[i];
+            }
+            if (dataPoints[i] > max)
+            {
+                max = dataPoints[i];
+            }
+        }
+        System.out.println("The minimum value in the array is: " + min);
+        System.out.println("The maximum value in the array is: " + max);
+
+        // Task 9
+        System.out.println("Average of dataPoints is: " + getAverage(dataPoints));
+    }
+    public static double getAverage(int values[])
+    {
+        int sum = 0;
+        for (int i = 0; i < values.length; i++)
+        {
+            sum += values[i];
+        }
+        return (double) sum / values.length;
     }
 }
